@@ -40,6 +40,12 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li>
             <li>
+                <a href="services.php">
+                    <i class="pe-7s-ticket"></i>
+                    <p>Services</p>
+                </a>
+            </li>
+            <li>
                 <a href="projects.php">
                     <i class="pe-7s-rocket"></i>
                     <p>Projects</p>

@@ -9,58 +9,46 @@ Tip 2: you can also add an image using data-image tag
 
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="dashboard.html" class="simple-text">
+            <a href="index.php" class="simple-text">
                 Sara Claeys
             </a>
         </div>
 
         <ul class="nav">
             <li class="active">
-                <a href="dashboard.html">
+                <a href="index.php">
                     <i class="pe-7s-graph"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <li>
-                <a href="user.html">
+                <a href="user.php">
                     <i class="pe-7s-user"></i>
                     <p>User Profile</p>
                 </a>
             </li>
             <li>
-                <a href="table.html">
-                    <i class="pe-7s-note2"></i>
-                    <p>Table List</p>
+                <a href="photos.php">
+                    <i class="pe-7s-photo"></i>
+                    <p>Photos</p>
                 </a>
             </li>
             <li>
-                <a href="typography.html">
-                    <i class="pe-7s-news-paper"></i>
-                    <p>Typography</p>
+                <a href="skills.php">
+                    <i class="pe-7s-study"></i>
+                    <p>Skills</p>
                 </a>
             </li>
             <li>
-                <a href="icons.html">
-                    <i class="pe-7s-science"></i>
-                    <p>Icons</p>
-                </a>
-            </li>
-            <li>
-                <a href="maps.html">
-                    <i class="pe-7s-map-marker"></i>
-                    <p>Maps</p>
+                <a href="projects.php">
+                    <i class="pe-7s-rocket"></i>
+                    <p>Projects</p>
                 </a>
             </li>
             <li>
                 <a href="notifications.html">
                     <i class="pe-7s-bell"></i>
                     <p>Notifications</p>
-                </a>
-            </li>
-            <li class="active-pro">
-                <a href="upgrade.html">
-                    <i class="pe-7s-rocket"></i>
-                    <p>Upgrade to PRO</p>
                 </a>
             </li>
         </ul>

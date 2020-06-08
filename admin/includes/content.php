@@ -7,7 +7,7 @@
                 <h2>Connectie Database</h2>
                 <hr>
                 <?php
-                if ($database->connection){
+                if ($database->connection) {
                     echo "Connectie gemaakt met de Database";
                 }
                 ?>
@@ -15,12 +15,29 @@
                 <h2>Een user ophalen</h2>
                 <hr>
                 <?php
-                $sql = "SELECT * FROM user WHERE id = 1";
-                $result = $database->query($sql);
-                $user_found = mysqli_fetch_array($result);
-                echo $user_found["username"];
+                $result = User::find_by_id(1);
+                $user = new User();
+                $user->id = $result['id'];
+                $user->username = $result['username'];
+                $user->password = $result['password'];
+                $user->role_id = $result['role_id'];
+                $user->first_name = $result['first_name'];
+                $user->last_name = $result['last_name'];
+                $user->title = $result['title'];
+                $user->image_id = $result['image_id'];
+                $user->email = $result['email'];
+                $user->telephone = $result['telephone'];
+                $user->about = $result['about'];
+
+                echo $user->username . ' - ' . $user->id;
+                ?>
+
+                <h2>Users ophalen</h2>
+                <?php
+
 
                 ?>
+
             </div>
         </div>
         <!-- Einde test -->

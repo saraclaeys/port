@@ -17,7 +17,7 @@ class User extends Db_object
     public $email;
     public $telephone;
     public $about;
-    
+
     public $upload_directory ='img' . DS . 'users';
     public $image_placeholder = 'http://place-hold.it/400x400&text=image';
 

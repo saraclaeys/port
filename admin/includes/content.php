@@ -16,25 +16,17 @@
                 <hr>
                 <?php
                 $result = User::find_by_id(1);
-                $user = new User();
-                $user->id = $result['id'];
-                $user->username = $result['username'];
-                $user->password = $result['password'];
-                $user->role_id = $result['role_id'];
-                $user->first_name = $result['first_name'];
-                $user->last_name = $result['last_name'];
-                $user->title = $result['title'];
-                $user->image_id = $result['image_id'];
-                $user->email = $result['email'];
-                $user->telephone = $result['telephone'];
-                $user->about = $result['about'];
+                $user = User::instantie($result);
 
-                echo $user->username . ' - ' . $user->id;
+                echo $user->username . ' - ' . $user->id . ' - ' . $user->first_name;
                 ?>
 
-                <h2>Users ophalen</h2>
+                <h2>Alle Users ophalen</h2>
                 <?php
-
+                $users = User::find_all();
+                foreach ($users as $user){
+                    echo $user->username . "<br>";
+                }
 
                 ?>
 

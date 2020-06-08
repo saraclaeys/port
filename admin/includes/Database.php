@@ -6,7 +6,7 @@ class Database
 {
     public $connection;
 
-    function __construct()
+    public function __construct()
     {
         $this->open_db_connection();
     }

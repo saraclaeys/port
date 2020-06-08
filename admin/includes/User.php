@@ -4,14 +4,20 @@
 class User extends Db_object
 {
     protected static $db_table = "user";
-    protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name', 'user_image');
+    protected static $db_table_fields = array('username', 'password', 'role_id', 'first_name', 'last_name', 'title', 'image_id', 'email', 'telephone', 'about');
 
     public $id;
     public $username;
     public $password;
+    public $role_id;
     public $first_name;
     public $last_name;
-    public $user_image;
+    public $title;
+    public $image_id;
+    public $email;
+    public $telephone;
+    public $about;
+    
     public $upload_directory ='img' . DS . 'users';
     public $image_placeholder = 'http://place-hold.it/400x400&text=image';
 

@@ -11,6 +11,16 @@
                     echo "Connectie gemaakt met de Database";
                 }
                 ?>
+
+                <h2>Een user ophalen</h2>
+                <hr>
+                <?php
+                $sql = "SELECT * FROM user WHERE id = 1";
+                $result = $database->query($sql);
+                $user_found = mysqli_fetch_array($result);
+                echo $user_found["username"];
+
+                ?>
             </div>
         </div>
         <!-- Einde test -->

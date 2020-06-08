@@ -1,5 +1,20 @@
 <div class="content">
     <div class="container-fluid">
+
+        <!-- Connectie Database testen -->
+        <div class="row">
+            <div class="col-12">
+                <h2>Connectie Database</h2>
+                <hr>
+                <?php
+                if ($database->connection){
+                    echo "Connectie gemaakt met de Database";
+                }
+                ?>
+            </div>
+        </div>
+        <!-- Einde test -->
+
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
@@ -49,7 +64,6 @@
                 </div>
             </div>
         </div>
-
 
 
         <div class="row">

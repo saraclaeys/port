@@ -46,7 +46,7 @@ class Db_object
     public static function instantie($result)
     {
         $calling_class = get_called_class();
-        $the_object = new $calling_class();
+        $the_object = new $calling_class;
         foreach ($result as $the_attribute => $value) {
             if ($the_object->has_the_attribute($the_attribute)) {
                 $the_object->$the_attribute = $value;

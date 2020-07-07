@@ -3,8 +3,8 @@
 
 class User extends Db_object
 {
-    protected static $db_table = "user";
-    protected static $db_table_fields = array('username', 'password', 'role_id', 'first_name', 'last_name', 'title', 'image_id', 'email', 'telephone', 'about');
+    protected static $db_table = "users";
+    protected static $db_table_fields = array('username', 'password', 'role_id', 'first_name', 'last_name', 'title', 'image_id', 'email', 'about', 'interests');
 
     public $id;
     public $username;
@@ -15,8 +15,8 @@ class User extends Db_object
     public $title;
     public $image_id;
     public $email;
-    public $telephone;
     public $about;
+    public $interests;
 
     public $upload_directory ='img' . DS . 'users';
     public $image_placeholder = 'http://place-hold.it/400x400&text=image';

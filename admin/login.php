@@ -3,9 +3,9 @@
 <body>
 
 <?php
-if ($session->is_signed_in()) {
+/*if ($session->is_signed_in()) {
     redirect("index.php");
-}
+}*/
 
 if (isset($_POST['submit'])) {
     $username = trim($_POST['username']);
@@ -56,23 +56,20 @@ if (isset($_POST['submit'])) {
 
                 <div class="container-login100-form-btn">
                     <input type="submit" name="submit" value="Login" class="login100-form-btn">
-<!--                    <button class="login100-form-btn">
-                        Login
-                    </button>-->
                 </div>
 
                 <div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
                     <a class="txt2" href="#">
-                        Username / Password?
+                        Gebruikersnaam of Paswoord
                     </a>
+						<span class="txt1">
+							vergeten?
+						</span>
                 </div>
 
                 <div class="text-center p-t-136">
                     <a class="txt2" href="#">
-                        Create your Account
+                        Maak een account aan
                         <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                     </a>
                 </div>

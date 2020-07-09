@@ -24,37 +24,37 @@ Tip 2: you can also add an image using data-image tag
             <li>
                 <a href="user.php">
                     <i class="pe-7s-user"></i>
-                    <p>User Profile</p>
+                    <p>Profiel</p>
                 </a>
             </li>
             <li>
                 <a href="photos.php">
                     <i class="pe-7s-photo"></i>
-                    <p>Photos</p>
+                    <p>Foto's</p>
+                </a>
+            </li>
+            <li>
+                <a href="experience.php">
+                    <i class="pe-7s-study"></i>
+                    <p>Ervaring</p>
                 </a>
             </li>
             <li>
                 <a href="skills.php">
-                    <i class="pe-7s-study"></i>
-                    <p>Skills</p>
-                </a>
-            </li>
-            <li>
-                <a href="services.php">
                     <i class="pe-7s-ticket"></i>
-                    <p>Services</p>
+                    <p>Skills</p>
                 </a>
             </li>
             <li>
                 <a href="projects.php">
                     <i class="pe-7s-rocket"></i>
-                    <p>Projects</p>
+                    <p>Projecten</p>
                 </a>
             </li>
             <li>
-                <a href="notifications.html">
+                <a href="contact.php">
                     <i class="pe-7s-bell"></i>
-                    <p>Notifications</p>
+                    <p>Contact</p>
                 </a>
             </li>
         </ul>

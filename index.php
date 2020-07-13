@@ -1,3 +1,5 @@
+<?php include('includes/header.php'); ?>
+
 <div class="home-banner fullscreen">
     <div class="gradient"></div>
     <div class="banner-content dtable fullscreen">
@@ -322,3 +324,5 @@
     </div>
 </div>
 <!-- // contact -->
+
+<?php include('includes/footer.php'); ?>

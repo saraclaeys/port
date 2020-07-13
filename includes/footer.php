@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="conainer text-center wow zoomIn">
+    <div class="container text-center wow zoomIn">
         <div class="social-icons clearfix">
             <a class="facebook" href="http://www.fb.com/themefisher">
                 <i class="icon-facebook"></i>

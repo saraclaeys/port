@@ -1,26 +1,21 @@
 <footer class="footer">
     <div class="container text-center wow zoomIn">
         <div class="social-icons clearfix">
-            <a class="facebook" href="http://www.fb.com/themefisher">
-                <i class="icon-facebook"></i>
-            </a>
-
-            <a class="twitter" href="http://www.twitter.com/themefisher">
-                <i class="icon-twitter"></i>
-            </a>
-
-            <a class="dribbble" href="http://www.themefisher.com/themefisher">
-                <i class="icon-dribbble"></i>
-            </a>
-
-            <a class="linkedin" href="http://www.linkedin.com/themefisher">
+            <a class="linkedin" href="https://www.linkedin.com/in/sara-c-160bb8199/" target="_blank">
                 <i class="icon-linkedin"></i>
             </a>
 
-            <a class="googleplus" href="http://www.plus.google.com/themefisher">
-                <i class="icon-googleplus"></i>
+            <a class="github" href="https://www.github.com/saraclaeys" target="_blank">
+                <i class="icon-github"></i>
             </a>
 
+            <a class="facebook" href="https://www.facebook.com/nolimitsonlydreams/" target="_blank">
+                <i class="icon-facebook"></i>
+            </a>
+
+            <a class="instagram" href="https://www.instagram.com/nolimitsonlydreams" target="_blank">
+                <i class="icon-instagram"></i>
+            </a>
 
         </div>
 

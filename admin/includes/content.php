@@ -30,15 +30,12 @@
                 ?>
 
                 <?php
-                // create user
-                $user = new User();
-                $user->username = "Sam";
-                $user->password = "123";
-                $user->first_name = "Sam";
-                $user->last_name = "Decursist";
+                // update user
+/*                $user = User::find_by_id(2);
+                $user->last_name = "Williams";
 
-                $user->create();
-                ?>
+                $user->update();
+                */?>
 
             </div>
         </div>

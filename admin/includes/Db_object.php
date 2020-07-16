@@ -24,11 +24,7 @@ class Db_object
     public static function find_by_id($id)
     {
         $result = static::find_this_query("SELECT * FROM " . static::$db_table . " WHERE id = $id LIMIT 1");
-        /*if (!empty($result)) {
-            return array_shift($result);
-        } else {
-            return false;
-        }*/
+
         return !empty($result) ? array_shift($result) : false;
     }
 
@@ -61,39 +57,24 @@ class Db_object
         return array_key_exists($the_attribute, $object_properties);
     }
 
-    public function save(){
+    public function save()
+    {
         return isset($this->id) ? $this->update() : $this->create();
     }
 
-    public function create() {
-        global $database;
 
-        $sql = "INSERT INTO users (username, password, first_name, last_name)";
-        $sql.= " VALUES ('";
-        $sql .= $database->escape_string($this->username) . "', '";
-        $sql .= $database->escape_string($this->password) . "', '";
-        $sql .= $database->escape_string($this->first_name) . "', '";
-        $sql .= $database->escape_string($this->last_name) . "')";
-
-        if ($database->query($sql)){
-            $this->id = $database->the_insert_id();
-            return true;
-        } else {
-            return false;
-            $database->query($sql);
-        }
-    }
-
-/*    public function create(){
+    public function create()
+    {
         global $database;
         $properties = $this->clean_properties();
-
+        //test
+        //var_dump($properties);
         $sql = "INSERT INTO " . static::$db_table . " (" . implode(",", array_keys($properties)) . ")";
-        $sql .= " VALUES ('". implode("','", array_values($properties)) . "')";
-        //testing
+        $sql .= " VALUES ('" . implode("','", array_values($properties)) . "')";
+        // test
         // var_dump($sql);
 
-        if ($database->query($sql)){
+        if ($database->query($sql)) {
             $this->id = $database->the_insert_id();
             return true;
         } else {
@@ -101,14 +82,15 @@ class Db_object
         }
 
         $database->query($sql);
-    }*/
+    }
 
-    public function update(){
+    public function update()
+    {
         global $database;
         $properties = $this->clean_properties();
         $properties_assoc = array();
 
-        foreach ($properties as $key => $value){
+        foreach ($properties as $key => $value) {
             $properties_assoc[] = "{$key}='{$value}'";
         }
 
@@ -120,37 +102,40 @@ class Db_object
         return (mysqli_affected_rows($database->connection) == 1) ? true : false;
     }
 
-    public function delete(){
-        global  $database;
+    public function delete()
+    {
+        global $database;
         $sql = "DELETE FROM " . static::$db_table;
         $sql .= " WHERE id= " . $database->escape_string($this->id);
         $sql .= " LIMIT 1";
 
         $database->query($sql);
-        return(mysqli_affected_rows($database->connection) == 1) ? true : false;
+        return (mysqli_affected_rows($database->connection) == 1) ? true : false;
     }
 
-    protected function  properties(){
-//        return get_object_vars($this);
+    protected function properties()
+    {
         $properties = array();
-        foreach (static::$db_table_fields as $db_field){
-            if (property_exists($this, $db_field)){
+        foreach (static::$db_table_fields as $db_field) {
+            if (property_exists($this, $db_field)) {
                 $properties[$db_field] = $this->$db_field;
             }
         }
         return $properties;
     }
 
-    protected function clean_properties(){
+    protected function clean_properties()
+    {
         global $database;
         $clean_properties = array();
-        foreach ($this->properties() as $key => $value){
-            $clean_properties[$key] = $database->escape_string(($value));
+        foreach ($this->properties() as $key => $value) {
+            $clean_properties[$key] = $database->escape_string($value);
         }
         return $clean_properties;
     }
 
-    public static function count_all(){
+    public static function count_all()
+    {
         global $database;
         $sql = "SELECT COUNT(*) FROM " . static::$db_table;
         $result_set = $database->query($sql);

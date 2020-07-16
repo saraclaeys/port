@@ -18,7 +18,7 @@ class User extends Db_object
     public $about;
     public $interests;
 
-    public $upload_directory ='img' . DS . 'users';
+    public $upload_directory = 'img' . DS . 'users';
     public $image_placeholder = 'http://place-hold.it/400x400&text=image';
 
     public $type;
@@ -29,7 +29,7 @@ class User extends Db_object
     public $upload_errors_array = array(
         UPLOAD_ERR_OK => "There is no error",
         UPLOAD_ERR_INI_SIZE => "The upload file exceeds the upload max_filesize from php.ini",
-        UPLOAD_ERR_FORM_SIZE => "The upload file exeeds MAX_FILE_SIZE in php.ini for html form",
+        UPLOAD_ERR_FORM_SIZE => "The upload file exceeds MAX_FILE_SIZE in php.ini for html form",
         UPLOAD_ERR_NO_FILE => "No file uploaded",
         UPLOAD_ERR_PARTIAL => "The file was partially uploaded",
         UPLOAD_ERR_NO_TMP_DIR => "Missing a temporary folder",
@@ -37,7 +37,8 @@ class User extends Db_object
         UPLOAD_ERR_EXTENSION => "A php extension stopped your upload"
     );
 
-    public static function verify_user($user, $pass){
+    public static function verify_user($user, $pass)
+    {
         global $database;
         $username = $database->escape_string($user);
         $password = $database->escape_string($pass);
@@ -51,7 +52,8 @@ class User extends Db_object
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
 
-    public function image_path_and_placeholder(){
+    public function image_path_and_placeholder()
+    {
         return empty($this->user_image) ? $this->image_placeholder : $this->upload_directory . DS . $this->user_image;
     }
 

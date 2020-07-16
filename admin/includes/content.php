@@ -27,7 +27,17 @@
                 foreach ($users as $user){
                     echo $user->username . "<br>";
                 }
+                ?>
 
+                <?php
+                // create user
+                $user = new User();
+                $user->username = "Sam";
+                $user->password = "123";
+                $user->first_name = "Sam";
+                $user->last_name = "Decursist";
+
+                $user->create();
                 ?>
 
             </div>

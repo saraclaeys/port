@@ -3,20 +3,19 @@
 
 class Photo extends Db_object
 {
-    protected static $db_table = "photo";
-    protected static $db_table_fields = array('title', 'caption', 'description', 'filename', 'alternate_text', 'type', 'size');
+    protected static $db_table = "images";
+    protected static $db_table_fields = array('title', 'type', 'alt', 'size', 'path', 'name');
 
     public $id;
     public $title;
-    public $caption;
-    public $description;
-    public $filename;
-    public $alternate_text;
     public $type;
+    public $alt;
     public $size;
+    public $path;
+    public $name;
 
     public $tmp_path;
-    public $upload_directory = 'img';
+    public $upload_directory = 'images';
 
     public function set_file($file)
     {
@@ -27,7 +26,7 @@ class Photo extends Db_object
             $this->errors[] = $this->upload_errors_array[$file['error']];
             return false;
         } else {
-            $this->filename = basename($file['name']);
+            $this->name = basename($file['name']);
             $this->tmp_path = $file['tmp_path'];
             $this->type = $file['type'];
             $this->size = $file['size'];
@@ -42,14 +41,14 @@ class Photo extends Db_object
             if (!empty($this->errors)) {
                 return false;
             }
-            if (empty($this->filename) || empty($this->temp_path)) {
+            if (empty($this->name) || empty($this->temp_path)) {
                 $this->errors[] = "File not available";
                 return false;
             }
-            $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
+            $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->name;
 
             if (file_exists($target_path)) {
-                $this->errors[] = "File {$this->filename} exists";
+                $this->errors[] = "File {$this->name} exists";
                 return false;
             }
 
@@ -68,7 +67,7 @@ class Photo extends Db_object
 
     public function picture_path()
     {
-        return $this->upload_directory . DS . $this->filename;
+        return $this->upload_directory . DS . $this->name;
     }
 
     public function delete_photo()

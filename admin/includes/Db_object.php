@@ -65,7 +65,26 @@ class Db_object
         return isset($this->id) ? $this->update() : $this->create();
     }
 
-    public function create(){
+    public function create() {
+        global $database;
+
+        $sql = "INSERT INTO users (username, password, first_name, last_name)";
+        $sql.= " VALUES ('";
+        $sql .= $database->escape_string($this->username) . "', '";
+        $sql .= $database->escape_string($this->password) . "', '";
+        $sql .= $database->escape_string($this->first_name) . "', '";
+        $sql .= $database->escape_string($this->last_name) . "')";
+
+        if ($database->query($sql)){
+            $this->id = $database->the_insert_id();
+            return true;
+        } else {
+            return false;
+            $database->query($sql);
+        }
+    }
+
+/*    public function create(){
         global $database;
         $properties = $this->clean_properties();
 
@@ -82,7 +101,7 @@ class Db_object
         }
 
         $database->query($sql);
-    }
+    }*/
 
     public function update(){
         global $database;

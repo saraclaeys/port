@@ -24,18 +24,18 @@
                 <h2>Alle Users ophalen</h2>
                 <?php
                 $users = User::find_all();
-                foreach ($users as $user){
+                foreach ($users as $user) {
                     echo $user->username . "<br>";
                 }
                 ?>
 
+                <h2>Alle foto's ophalen</h2>
                 <?php
-                // update user
-/*                $user = User::find_by_id(2);
-                $user->last_name = "Williams";
-
-                $user->update();
-                */?>
+                $photos = Photo::find_all();
+                foreach ($photos as $photo) {
+                    echo $photo->title . "<br>";
+                }
+                ?>
 
             </div>
         </div>

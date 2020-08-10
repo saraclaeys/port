@@ -8,10 +8,12 @@ class Photo extends Db_object
 
     public $id;
     public $title;
+    public $caption;
     public $type;
     public $alt;
     public $size;
     public $path;
+    public $alternate_text;
     public $name;
 
     public $tmp_path;

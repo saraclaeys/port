@@ -21,8 +21,13 @@ $photos = Photo::find_all();
                     <th>Image</th>
                     <th>Id</th>
                     <th>Title</th>
-                    <th>File</th>
+                    <th>Caption</th>
+                    <th>Alt</th>
                     <th>Size</th>
+                    <th>Path</th>
+                    <th>Alternate text</th>
+                    <th>Name</th>
+                    <th>Edit?</th>
                     <th>Delete?</th>
                 </tr>
                 </thead>
@@ -32,8 +37,13 @@ $photos = Photo::find_all();
                     <td><img src="<?php echo $photo->picture_path(); ?>" height="250" width="195" alt=""</td>
                     <td><?php echo $photo->id; ?></td>
                     <td><?php echo $photo->title; ?></td>
-                    <td><?php echo $photo->path; ?></td>
+                    <td><?php echo $photo->caption; ?></td>
+                    <td><?php echo $photo->alt; ?></td>
                     <td><?php echo $photo->size; ?></td>
+                    <td><?php echo $photo->path; ?></td>
+                    <td><?php echo $photo->alternate_text; ?></td>
+                    <td><?php echo $photo->name; ?></td>
+                    <td><a href="edit_photo.php?=id<?php echo $photo->id; ?>" class="btn btn-danger rounded-0"><i class="fas fa-edit"></i></a></td>
                     <td><a href="delete_photo.php?id=<?php echo $photo->id; ?>" class="btn btn-danger rounded-0"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
                 <?php endforeach; ?>

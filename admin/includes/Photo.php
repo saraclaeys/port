@@ -19,14 +19,14 @@ class Photo extends Db_object
 
     public function set_file($file)
     {
-        if (empty($file) || !$file || is_array($file)) {
+        if (empty($file) || !$file || !is_array($file)) {
             $this->errors[] = "No file uploaded";
             return false;
         } elseif ($file['error'] != 0) {
             $this->errors[] = $this->upload_errors_array[$file['error']];
             return false;
         } else {
-            $this->name = basename($file['name']);
+            $this->title = basename($file['name']);
             $this->tmp_path = $file['tmp_path'];
             $this->type = $file['type'];
             $this->size = $file['size'];
@@ -41,14 +41,14 @@ class Photo extends Db_object
             if (!empty($this->errors)) {
                 return false;
             }
-            if (empty($this->name) || empty($this->temp_path)) {
+            if (empty($this->title) || empty($this->temp_path)) {
                 $this->errors[] = "File not available";
                 return false;
             }
-            $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->name;
+            $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->title;
 
             if (file_exists($target_path)) {
-                $this->errors[] = "File {$this->name} exists";
+                $this->errors[] = "File {$this->title} exists";
                 return false;
             }
 
@@ -67,7 +67,7 @@ class Photo extends Db_object
 
     public function picture_path()
     {
-        return $this->upload_directory . DS . $this->name;
+        return $this->upload_directory . DS . $this->title;
     }
 
     public function delete_photo()

@@ -4,7 +4,7 @@ defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 // C:\wamp64\www\port
 define('SITE_ROOT', DS . 'wamp64' . DS . 'www' . DS . 'port');
 defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT . DS . 'admin' . DS . 'includes');
-defined('IMAGE_PATH') ? null : define('IMAGES_PATH', SITE_ROOT . DS . 'admin' . DS . 'img');
+defined('IMAGES_PATH') ? null : define('IMAGES_PATH', SITE_ROOT . DS . 'admin' . DS . 'images');
 
 
 require_once (INCLUDES_PATH . DS . 'functions.php');

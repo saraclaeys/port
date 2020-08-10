@@ -22,9 +22,9 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li>
             <li>
-                <a href="user.php">
+                <a href="users.php">
                     <i class="pe-7s-user"></i>
-                    <p>About me</p>
+                    <p>User</p>
                 </a>
             </li>
             <li>

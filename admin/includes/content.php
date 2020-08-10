@@ -50,6 +50,8 @@
                 $photo->save();
                 ?>
 
+                <?php echo INCLUDES_PATH ?> <br>
+                <?php echo IMAGES_PATH ?>
 
             </div>
         </div>

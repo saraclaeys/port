@@ -8,7 +8,7 @@ class Db_object
     public $upload_errors_array = array(
         UPLOAD_ERR_OK => "There is no error",
         UPLOAD_ERR_INI_SIZE => "The upload file exceeds the upload max_filesize from php.ini",
-        UPLOAD_ERR_FORM_SIZE => "The upload file exeeds MAX_FILE_SIZE in php.ini for html form",
+        UPLOAD_ERR_FORM_SIZE => "The upload file exceeds MAX_FILE_SIZE in php.ini for html form",
         UPLOAD_ERR_NO_FILE => "No file uploaded",
         UPLOAD_ERR_PARTIAL => "The file was partially uploaded",
         UPLOAD_ERR_NO_TMP_DIR => "Missing a temporary folder",

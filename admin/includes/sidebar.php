@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="azure" data-image="assets/img/sidebar-5.jpg">
+<div class="sidebar" data-color="green" data-image="assets/img/sidebar-5.jpg">
 
     <!--
 

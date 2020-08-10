@@ -16,29 +16,29 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="user.php">
-                            <p>Mijn profiel</p>
+                            <p>My Profile</p>
                         </a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <p>
-                                Profiel
+                                Profile
                                 <b class="caret"></b>
                             </p>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="user.php">Mijn profiel</a></li>
-                            <li><a href="photos.php">Foto's</a></li>
-                            <li><a href="experience.php">Ervaring</a></li>
-                            <li><a href="skills.php">Skills</a></li>
-                            <li><a href="projects.php">Projecten</a></li>
+                            <li><a href="user.php">About me</a></li>
+                            <li><a href="photos.php">Images</a></li>
+                            <li><a href="experiences.php">Experiences</a></li>
+                            <li><a href="abilities.php">Abilities</a></li>
+                            <li><a href="projects.php">Projects</a></li>
                             <li class="divider"></li>
                             <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="logout.php">
-                            <p>Uitloggen</p>
+                            <p>Log out</p>
                         </a>
                     </li>
                     <li class="separator hidden-lg"></li>

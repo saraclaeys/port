@@ -37,6 +37,20 @@
                 }
                 ?>
 
+                <!-- Foto toevoegen in DB -->
+                <?php
+                $photo = new Photo();
+                $photo->title = "profielfoto";
+                $photo->type = "png";
+                $photo->alt = "profielfoto";
+                $photo->size = 15;
+                $photo->path = "../images/profielfoto/png";
+                $photo->name = "Sara Claeys";
+
+                $photo->save();
+                ?>
+
+
             </div>
         </div>
         <!-- Einde test -->

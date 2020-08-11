@@ -4,7 +4,7 @@
 class Photo extends Db_object
 {
     protected static $db_table = "images";
-    protected static $db_table_fields = array('title', 'type', 'alt', 'size', 'path', 'name');
+    protected static $db_table_fields = array('title', 'caption', 'type', 'alt', 'size', 'path', 'name');
 
     public $id;
     public $title;
@@ -13,7 +13,6 @@ class Photo extends Db_object
     public $alt;
     public $size;
     public $path;
-    public $alternate_text;
     public $name;
 
     public $tmp_path;

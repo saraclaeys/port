@@ -12,8 +12,9 @@ if (empty($_GET['id'])) {
     if (isset($_POST['update'])) {
         if ($photo) {
             $photo->title = $_POST['title'];
-            $photo->path = $_POST['path'];
+            $photo->caption = $_POST['caption'];
             $photo->alt = $_POST['alt'];
+            $photo->path = $_POST['path'];
             $photo->name = $_POST['name'];
             // $photo->type = $_POST['type'];
             // $photo->size = $_POST['size'];
@@ -42,6 +43,10 @@ if (empty($_GET['id'])) {
                         <a href="#" class="thumbnail"><img src="<?php echo $photo->picture_path(); ?>" alt=""></a>
                     </div>
                     <div class="form-group">
+                        <label for="caption">Caption:</label>
+                        <input type="text" name="alt" class="form-control" value="<?php echo $photo->caption; ?>">
+                    </div>
+                    <div class="form-group">
                         <label for="caption">Alt:</label>
                         <input type="text" name="alt" class="form-control" value="<?php echo $photo->alt; ?>">
                     </div>
@@ -62,16 +67,18 @@ if (empty($_GET['id'])) {
                                     <span class="fas fa-calendar">Uploaded on: April 01, 2020 @ 5.26</span>
                                 </p>
                                 <p class="text">
-                                    Photo Id: <span class="data photo_id_box"><?php echo $photo->id; ?></span>
+                                    Photo Id: <span class="data"><?php echo $photo->id; ?></span>
                                 </p>
                                 <p class="text">
                                     Title: <span class="data"><?php echo $photo->title; ?></span>
                                 </p>
                                 <p class="text">
-                                    File type: <span class="data"><?php echo $photo->type; ?></span>
+                                <label for="type">File Type</label>
+                                <input readonly type="text" name="type" class="form-control" value="<?php echo $photo->type ?>">
                                 </p>
                                 <p class="text">
-                                    File size: <span class="data"><?php echo $photo->size; ?></span>
+                                    <label for="size">Size Type</label>
+                                    <input readonly type="text" name="size" class="form-control" value="<?php echo $photo->size ?>">
                                 </p>
                             </div>
                             <div class="info-box-footer">

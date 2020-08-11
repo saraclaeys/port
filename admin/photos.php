@@ -41,7 +41,6 @@ $photos = Photo::find_all();
                     <td><?php echo $photo->alt; ?></td>
                     <td><?php echo $photo->size; ?></td>
                     <td><?php echo $photo->path; ?></td>
-                    <td><?php echo $photo->alternate_text; ?></td>
                     <td><?php echo $photo->name; ?></td>
                     <td><a href="edit_photo.php?=id<?php echo $photo->id; ?>" class="btn btn-danger rounded-0"><i class="fas fa-edit"></i></a></td>
                     <td><a href="delete_photo.php?id=<?php echo $photo->id; ?>" class="btn btn-danger rounded-0"><i class="fas fa-trash-alt"></i></a></td>

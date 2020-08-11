@@ -13,9 +13,9 @@ if (empty($_GET['id'])) {
         if ($photo) {
             $photo->title = $_POST['title'];
             $photo->caption = $_POST['caption'];
-            // $photo->type = $_POST['type'];
+            $photo->type = $_POST['type'];
             $photo->alt = $_POST['alt'];
-            // $photo->size = $_POST['size'];
+            $photo->size = $_POST['size'];
             $photo->path = $_POST['path'];
             $photo->name = $_POST['name'];
 
@@ -48,11 +48,11 @@ if (empty($_GET['id'])) {
                         <input type="text" name="alt" class="form-control" value="<?php echo $photo->caption; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="caption">Alt:</label>
+                        <label for="alt">Alt:</label>
                         <input type="text" name="alt" class="form-control" value="<?php echo $photo->alt; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="alternate_text">Name:</label>
+                        <label for="name">Name:</label>
                         <input type="text" name="name" class="form-control"
                                value="<?php echo $photo->name; ?>">
                     </div>

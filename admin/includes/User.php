@@ -18,8 +18,8 @@ class User extends Db_object
     public $about;
     public $interests;
 
-    public $upload_directory = 'img' . DS . 'users';
-    public $image_placeholder = 'http://place-hold.it/400x400&text=image';
+    public $upload_directory = 'image' . DS . 'users';
+    public $image_placeholder = 'http://place-hold.it/600x600&text=image';
 
     public $type;
     public $size;

@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h2>Welkom op de edit user pagina</h2>
+            <h2>Edit user</h2>
             <form action="" method="post">
                 <div class="col-md-8">
                     <div class="form-group">

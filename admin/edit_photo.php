@@ -13,11 +13,12 @@ if (empty($_GET['id'])) {
         if ($photo) {
             $photo->title = $_POST['title'];
             $photo->caption = $_POST['caption'];
+            // $photo->type = $_POST['type'];
             $photo->alt = $_POST['alt'];
+            // $photo->size = $_POST['size'];
             $photo->path = $_POST['path'];
             $photo->name = $_POST['name'];
-            // $photo->type = $_POST['type'];
-            // $photo->size = $_POST['size'];
+
             $photo->update();
         }
     }

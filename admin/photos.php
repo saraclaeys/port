@@ -25,7 +25,6 @@ $photos = Photo::find_all();
                     <th>Alt</th>
                     <th>Size</th>
                     <th>Path</th>
-                    <th>Alternate text</th>
                     <th>Name</th>
                     <th>Edit?</th>
                     <th>Delete?</th>
@@ -38,6 +37,7 @@ $photos = Photo::find_all();
                     <td><?php echo $photo->id; ?></td>
                     <td><?php echo $photo->title; ?></td>
                     <td><?php echo $photo->caption; ?></td>
+                    <td><?php echo $photo->type; ?></td>
                     <td><?php echo $photo->alt; ?></td>
                     <td><?php echo $photo->size; ?></td>
                     <td><?php echo $photo->path; ?></td>

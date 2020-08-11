@@ -49,3 +49,5 @@ $users = User::find_all();
             </div>
         </div>
     </div>
+
+<?php include ('includes/footer.php'); ?>

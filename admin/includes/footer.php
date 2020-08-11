@@ -1,4 +1,4 @@
-<footer class="footer">
+<!--<footer class="footer">
     <div class="container-fluid">
         <nav class="pull-left">
             <ul>
@@ -31,7 +31,7 @@
             web
         </p>
     </div>
-</footer>
+</footer>-->
 
 </div>
 </div>

@@ -34,6 +34,30 @@
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Views',     <?php echo $session->count; ?>],
+                ['Users',     <?php echo User::count_all(); ?>],
+                ['Photos',    <?php echo Photo::count_all(); ?>]
+            ]);
+
+            var options = {
+                pieSliceText: 'label',
+                title: 'My Portfolio'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 
 <body>

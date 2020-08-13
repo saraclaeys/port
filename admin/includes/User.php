@@ -76,7 +76,7 @@ class User extends Db_object
 
     public function save_user_and_image()
     {
-        $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->user_image;
+        $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->image_id;
         if ($this->id) {
             move_uploaded_file($this->tmp_path, $target_path);
             $this->update();

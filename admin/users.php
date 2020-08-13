@@ -26,6 +26,10 @@ $users = User::find_all();
                         <th>Username</th>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>E-mail</th>
+                        <th>Title</th>
+                        <th>About</th>
+                        <th>Interests</th>
                         <th>Edit?</th>
                         <th>Delete?</th>
                     </tr>
@@ -39,6 +43,10 @@ $users = User::find_all();
                             <td><?php echo $user->username; ?></td>
                             <td><?php echo $user->first_name; ?></td>
                             <td><?php echo $user->last_name; ?></td>
+                            <td><?php echo $user->email; ?></td>
+                            <td><?php echo $user->title; ?></td>
+                            <td><?php echo $user->about; ?></td>
+                            <td><?php echo $user->interests; ?></td>
                             <td><a href="edit_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger rounded-0"><i class="far fa-edit"></i></a></td>
                             <td><a href="delete_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger rounded-0"><i class="far fa-trash-alt"></i></a></td>
                         </tr>

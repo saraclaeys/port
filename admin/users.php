@@ -19,7 +19,7 @@ $users = User::find_all();
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-title">All users</p>
+                            <h4 class="card-title">All users</h4>
                             <div class="table-responsive">
                                 <table id="status-report-listing" class="table">
                                     <thead>

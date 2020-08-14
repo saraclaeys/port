@@ -1,9 +1,8 @@
 <?php include('includes/header.php'); ?>
-
 <?php
-if (!$session->is_signed_in()) {
+/*if (!$session->is_signed_in()) {
     redirect('login.php');
-}
+}*/
 
 
 if (empty($_GET['id'])) {
@@ -15,9 +14,12 @@ $user = User::find_by_id($_GET['id']);
 if (isset($_POST['submit'])) {
     if ($user) {
         $user->username = $_POST['username'];
+        $user->password = $_POST['password'];
         $user->first_name = $_POST['first_name'];
         $user->last_name = $_POST['last_name'];
-        $user->password = $_POST['password'];
+        $user->title = $_POST['title'];
+        $user->email = $_POST['email'];
+        $user->about = $_POST['about'];
         if (empty($_FILES['file'])) {
             $user->save();
         } else {
@@ -36,40 +38,44 @@ if (isset($_POST['submit'])) {
 
 <!-- hier komt het overzicht van alle users -->
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <h2>Edit user</h2>
-            <form action="" method="post">
-                <div class="col-md-8">
-                    <div class="form-group">
-                        <label for="title">Username:</label>
-                        <input type="text" name="username" class="form-control" value=" <?php echo $user->username; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="first_name">First name:</label>
-                        <input type="text" name="first_name" class="form-control"
-                               value="<?php echo $user->first_name; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="last_name">Last name:</label>
-                        <input type="text" name="last_name" class="form-control"
-                               value="<?php echo $user->last_name; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" class="form-control"
-                               value="<?php echo $user->password; ?>">
-                    </div>
-                    <div class="form-group">
-                        <img src="<?php echo $user->image_path_and_placeholder(); ?>" alt="" class="img-fluid"
-                             width="40" height="40">
-                        <label for="file">User image:</label>
-                        <input type="file" name="file" class="form-control">
-                    </div>
-                    <input type="submit" name="submit" value="Update user" class="btn btn-primary">
-                    <a href="delete_user.php?id= <?php echo $user->id; ?>" class="btn btn-danger">Delete User?</a>
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin">
+                <div class="d-flex align-items-baseline flex-wrap mt-3">
+                    <h2 class="mr-4 mb-0">Edit user</h2>
                 </div>
-            </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="edit_user.php?id=<?php $user->id; ?>" method="post" enctype="">
+                            <h3>Id</h3>
+                            <p><?php echo $user->id; ?></p>
+                            <h3>Image</h3>
+                            <?php $photo = Photo::find_by_id($user->image_id); ?>
+                            <img src="../images/<?php echo $photo->name; ?>" alt="<?php echo $photo->alt; ?>" width="150px" height="auto">
+                            <p><?php echo $photo->name; ?></p>
+                            <h3>Username</h3>
+                            <input type="text" name="username" value="<?php echo $user->username; ?>">
+                            <h3>Password</h3>
+                            <input type="password" name="password" value="<?php echo $user->password; ?>">
+                            <h3>First name</h3>
+                            <input type="text" name="first_name" value="<?php echo $user->first_name; ?>">
+                            <h3>Last name</h3>
+                            <input type="text" name="last_name" value="<?php echo $user->last_name; ?>">
+                            <h3>Title</h3>
+                            <input type="text" name="title" value="<?php echo $user->title; ?>">
+                            <h3>E-mail</h3>
+                            <input type="email" name="email" value="<?php echo $user->email; ?>">
+                            <h3>About</h3>
+                            <textarea name="about" id="mytextarea" cols="30" rows="10"><?php echo $user->about; ?></textarea>
+                            <input type="submit" value="submit" name="submit" class="btn btn-primary">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
-</div>

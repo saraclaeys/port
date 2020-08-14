@@ -24,7 +24,7 @@ Tip 2: you can also add an image using data-image tag
             <li>
                 <a href="users.php">
                     <i class="pe-7s-user"></i>
-                    <p>User</p>
+                    <p>Users</p>
                 </a>
             </li>
             <li>

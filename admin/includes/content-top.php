@@ -27,7 +27,7 @@
                             </p>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="users.php">User</a></li>
+                            <li><a href="users.php">Users</a></li>
                             <li><a href="photos.php">Images</a></li>
                             <li><a href="experiences.php">Experiences</a></li>
                             <li><a href="abilities.php">Abilities</a></li>

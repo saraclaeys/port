@@ -1,61 +1,73 @@
+<?php include("includes/header.php"); ?>
+<?php include("includes/content-top.php"); ?>
+<?php include("includes/sidebar.php"); ?>
+
 <?php
-include ('includes/header.php');
-/*if(!$session->is_signed_in()){
-    redirect('login.php');
-}*/
-
-$users = User::find_all();
+$users = User::find_all ();
 ?>
-
-<?php include('includes/sidebar.php'); ?>
-
-<?php include('includes/content-top.php'); ?>
-
-    <!---------------------- content --------------------------->
-
-    <div class="container-fluid">
+    <!-- partial -->
+    <div class="main-panel">
+    <div class="content-wrapper">
         <div class="row">
-            <div class="col-12">
-                <h2>Users</h2>
-                <a href="add_user.php" class="btn btn-primary rounded-0"><i class="fas fa-user-plus"></i> Add User</a>
-                <table class="table table-header">
-                    <thead>
-                    <tr>
-                        <th>Photo</th>
-                        <th>Id</th>
-                        <th>Username</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>E-mail</th>
-                        <th>Title</th>
-                        <th>About</th>
-                        <th>Interests</th>
-                        <th>Edit?</th>
-                        <th>Delete?</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <!-- start foreach -->
-                    <?php foreach ($users as $user): ?>
-                        <tr>
-                            <td><img src="<?php echo $user->image_path_and_placeholder(); ?>" height="60" width="60"></td>
-                            <td><?php echo $user->id; ?></td>
-                            <td><?php echo $user->username; ?></td>
-                            <td><?php echo $user->first_name; ?></td>
-                            <td><?php echo $user->last_name; ?></td>
-                            <td><?php echo $user->email; ?></td>
-                            <td><?php echo $user->title; ?></td>
-                            <td><?php echo $user->about; ?></td>
-                            <td><?php echo $user->interests; ?></td>
-                            <td><a href="edit_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger rounded-0"><i class="far fa-edit"></i></a></td>
-                            <td><a href="delete_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger rounded-0"><i class="far fa-trash-alt"></i></a></td>
-                        </tr>
-                    <?php endforeach; ?>
-                    <!-- einde foreach -->
-                    </tbody>
-                </table>
+            <div class="col-md-12 grid-margin">
+                <div class="d-flex align-items-baseline flex-wrap mt-3">
+                    <h2 class="mr-4 mb-0">Users</h2>
+                    <div class="d-flex align-items-baseline mt-2 mt-sm-0">
+                        <i class="fas fa-home mr-1 text-muted"></i>
+                        <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
+                        <p class="mb-0 mr-1">Users</p>
+                        <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
+                        <p class="mb-0">All users</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">All users</p>
+                        <div class="table-responsive">
+                            <table id="status-report-listing" class="table">
+                                <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Username</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Role</th>
+                                    <th>Title</th>
+                                    <th>Show</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach ($users as $user){
+                                    echo '<tr>';
+                                    $photo = Photo::find_by_id($user->image_id);
+                                    echo '<td><img src="../imgages/' . $photo->name . '"></td>';
+                                    echo '<td>' . $user->username . '</td>';
+                                    echo '<td>' . $user->first_name . '</td>';
+                                    echo '<td>' . $user->last_name . '</td>';
+
+                                    $role = Role::find_by_id ($user->role_id);
+                                    echo '<td>' . $role->role . '</td>';
+                                    echo '<td>' . $user->title . '</td>';
+                                    ?>
+                                    <td><a href="show_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger rounded-0">show user</a></td>
+                                    <?php
+                                    echo '</tr>';
+                                }
+                                ?>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-
-<?php include ('includes/footer.php'); ?>
+    <!-- content-wrapper ends -->
+<?php include("includes/footer.php"); ?>

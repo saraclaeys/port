@@ -4,6 +4,10 @@
 
 <?php include('includes/content-top.php'); ?>
 
-<?php include('includes/content.php'); ?>
+    <div class="container-fluid">
+        <div class="row">
+            <h2>Projects</h2>
+        </div>
+    </div>
 
 <?php include('includes/footer.php'); ?>

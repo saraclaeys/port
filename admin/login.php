@@ -1,4 +1,5 @@
-<?php require_once("includes/login-header.php"); ?>
+<?php ob_start (); ?>
+<?php include ("includes/login-header.php"); ?>
 
 <body>
 
@@ -17,7 +18,7 @@ if (isset($_POST['submit'])) {
         $session->login($user_found);
         redirect("index.php");
     } else {
-        $the_message = "De gebruikersnaam of het paswoord is incorrect";
+        $the_message = "The username or password is incorrect";
     }
 } else {
     $username = "";
@@ -78,4 +79,4 @@ if (isset($_POST['submit'])) {
     </div>
 </div>
 
-<?php require_once("includes/login-footer.php"); ?>
+<?php include ("includes/login-footer.php"); ?>

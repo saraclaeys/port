@@ -1,5 +1,5 @@
 <div class="content">
-    <div class="container-fluid d-flex content">
+    <div class="container-fluid d-flex align-items-center justify-content-center mb-4">
 
         <div class="row d-flex content">
             <div class="col-12 col-md-4 mb-4">

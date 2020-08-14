@@ -57,6 +57,7 @@ class Db_object
         return array_key_exists($the_attribute, $object_properties);
     }
 
+    /*---------------------- CRUD -------------------------*/
     public function save()
     {
         return isset($this->id) ? $this->update() : $this->create();
@@ -69,7 +70,7 @@ class Db_object
         $properties = $this->clean_properties();
         //test
         //var_dump($properties);
-        $sql = "INSERT INTO " . static::$db_table . " (" . implode(",", array_keys($properties)) . ")";
+        $sql = "INSERT INTO " . static::$db_table . " (" . implode(", ", array_keys($properties)) . ")";
         $sql .= " VALUES ('" . implode("','", array_values($properties)) . "')";
         // test
         // var_dump($sql);

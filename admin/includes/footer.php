@@ -58,6 +58,9 @@
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
 
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="js/script.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
 

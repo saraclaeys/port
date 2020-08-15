@@ -1,9 +1,13 @@
 <?php include('includes/header.php'); ?>
+
+<?php include('includes/sidebar.php'); ?>
+
+<?php include('includes/content-top.php'); ?>
+
 <?php
 /*if (!$session->is_signed_in()) {
     redirect('login.php');
 }*/
-
 
 if (empty($_GET['id'])) {
     redirect('users.php');
@@ -19,24 +23,19 @@ if (isset($_POST['submit'])) {
         $user->last_name = $_POST['last_name'];
         $user->title = $_POST['title'];
         $user->email = $_POST['email'];
-        $user->about = $_POST['about'];
         if (empty($_FILES['file'])) {
             $user->save();
         } else {
             $user->set_file($_FILES['file']);
+        $user->about = $_POST['about'];
             $user->save_user_and_image();
             // $user->save();
             redirect('edit_user.php?id={user->id}');
         }
     }
 }
-
 ?>
 
-<?php include('includes/sidebar.php'); ?>
-<?php include('includes/content-top.php'); ?>
-
-<!-- hier komt het overzicht van alle users -->
 <div class="container-fluid">
     <div class="content-wrapper">
         <div class="row">
@@ -55,7 +54,7 @@ if (isset($_POST['submit'])) {
                             <p><?php echo $user->id; ?></p>
                             <h3>Image</h3>
                             <?php $photo = Photo::find_by_id($user->image_id); ?>
-                            <img src="../images/<?php echo $photo->name; ?>" alt="<?php echo $photo->alt; ?>" width="150px" height="auto">
+                            <img src="<?php echo $user->image_path_and_placeholder(); ?>" height="80" width="80">
                             <p><?php echo $photo->name; ?></p>
                             <h3>Username</h3>
                             <input type="text" name="username" value="<?php echo $user->username; ?>">

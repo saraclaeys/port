@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center d-flex content">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success mb-1">Photos
+                                <div class="font-weight-bold text-success mb-1">Photos
                                 </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo Photo::count_all(); ?></div>
                             </div>

@@ -15,14 +15,14 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="user.php">
-                            <p>My Profile</p>
+                        <a href="users.php">
+                            <p>Users</p>
                         </a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <p>
-                                Profile
+                                Menu
                                 <b class="caret"></b>
                             </p>
                         </a>

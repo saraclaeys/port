@@ -46,9 +46,12 @@ $user = User::find_by_id ($_GET['id']);
                         <p><?php echo $user->email; ?></p>
                         <h3>About</h3>
                         <p><?php echo $user->about; ?></p>
+                        <h3>Edit user</h3>
+                        <p> <a href="edit_user.php?id=<?php echo $user->id; ?>" class="btn btn-primary rounded-0"><i class="fas fa-edit"> Edit user</i></a>
+                        <a href="delete_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger rounded-0"><i class="fas fa-trash-alt"> Delete user</i></a></p>
                     </div>
-                    <a href="edit_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger rounded-0"><i class="fas fa-edit"> Edit user</i></a>
-                    <a href="delete_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger rounded-0"><i class="fas fa-trash-alt"> Delete user</i></a>
+
+
                 </div>
             </div>
         </div>

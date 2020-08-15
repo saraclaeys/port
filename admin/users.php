@@ -12,6 +12,7 @@ $users = User::find_all();
                 <div class="col-md-12 grid-margin">
                     <div class="d-flex align-items-baseline flex-wrap mt-3">
                         <h2 class="mr-4 mb-0">Users</h2>
+                        <a href="add_user.php" class="btn btn-primary rounded-0"><i class="fas fa-user-plus"></i> Add User</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +31,7 @@ $users = User::find_all();
                                         <th>Last Name</th>
                                         <th>Role</th>
                                         <th>Title</th>
-                                        <th>Show</th>
+                                        <th>Show user</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -48,7 +49,7 @@ $users = User::find_all();
                                         echo '<td>' . $user->title . '</td>';
                                         ?>
                                         <td><a href="show_user.php?id=<?php echo $user->id; ?>"
-                                               class="btn btn-danger rounded-0">show user</a></td>
+                                               class="btn btn-primary rounded-0"><i class="far fa-eye"></i></a></td>
                                         <?php
                                         echo '</tr>';
                                     }

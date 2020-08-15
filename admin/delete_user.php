@@ -25,3 +25,5 @@ if ($user) {
 <?php include('includes/content-top.php'); ?>
 
 <h1>Delete User</h1>
+
+<?php include("includes/footer.php"); ?>

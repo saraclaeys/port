@@ -25,3 +25,5 @@ if ($photo) {
 <?php include('includes/content-top.php'); ?>
 
 <h1>Delete photo</h1>
+
+<?php include("includes/footer.php"); ?>

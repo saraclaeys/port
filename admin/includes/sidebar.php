@@ -15,7 +15,7 @@ Tip 2: you can also add an image using data-image tag
         </div>
 
         <ul class="nav">
-            <li class="active">
+            <li>
                 <a href="index.php">
                     <i class="pe-7s-graph"></i>
                     <p>Dashboard</p>

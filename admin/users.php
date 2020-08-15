@@ -1,11 +1,11 @@
 <?php include("includes/header.php"); ?>
+
 <?php include("includes/content-top.php"); ?>
+
 <?php include("includes/sidebar.php"); ?>
 
-<?php
-$users = User::find_all();
-?>
-    <!-- partial -->
+<?php $users = User::find_all(); ?>
+
     <div class="container-fluid">
         <div class="content-wrapper">
             <div class="row">
@@ -39,7 +39,7 @@ $users = User::find_all();
                                     foreach ($users as $user) {
                                         echo '<tr>';
                                         $photo = Photo::find_by_id($user->image_id);
-                                        echo '<td><img src="..images/' . $photo->name . '"></td>';
+                                        echo '<td><img src="' . $user->image_path_and_placeholder() . '" height="80" width="80"></td>';
                                         echo '<td>' . $user->username . '</td>';
                                         echo '<td>' . $user->first_name . '</td>';
                                         echo '<td>' . $user->last_name . '</td>';
@@ -59,11 +59,10 @@ $users = User::find_all();
                                 </table>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- content-wrapper ends -->
+
 <?php include("includes/footer.php"); ?>

@@ -54,7 +54,7 @@ class User extends Db_object
 
     public function image_path_and_placeholder()
     {
-        return empty($this->users_image_id) ? $this->image_placeholder : $this->upload_directory . DS . $this->users_image_id;
+        return empty($this->images_id) ? $this->image_placeholder : $this->upload_directory . DS . $this->images_id;
     }
 
     public function set_file($file)
@@ -67,7 +67,7 @@ class User extends Db_object
             return false;
         } else {
             // krijgt een uniek id doormiddel van datum en tijd
-            $this->user_image = date('m-d-Y_H-i-s') . basename($file['name']);
+            $this->image_id = date('m-d-Y_H-i-s') . basename($file['name']);
             $this->tmp_path = $file['tmp_name'];
             $this->type = $file['type'];
             $this->size = $file['size'];
@@ -86,13 +86,13 @@ class User extends Db_object
             if (!empty($this->errors)) {
                 return false;
             }
-            if (empty($this->user_image) || empty($this->tmp_path)) {
+            if (empty($this->image_id) || empty($this->tmp_path)) {
                 $this->errors[] = "File not available";
                 return false;
             }
 
             if (file_exists($target_path)) {
-                $this->errors[] = "File {$this->user_image} exists";
+                $this->errors[] = "File {$this->image_id} exists";
                 return false;
             }
 

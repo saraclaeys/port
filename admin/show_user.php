@@ -27,7 +27,7 @@ $user = User::find_by_id ($_GET['id']);
                         <p><?php echo $user->id; ?></p>
                         <h3>Image</h3>
                         <?php $photo = Photo::find_by_id ($user->id); ?>
-                        <img src="../images/<?php echo $photo->name; ?>" alt="<?php echo $photo->alt; ?>" width="150px" height="auto">
+                        <img src="<?php echo $user->image_path_and_placeholder(); ?>" height="80" width="80">
                         <p><?php echo $photo->name; ?></p>
                         <h3>Username</h3>
                         <p><?php echo $user->username; ?></p>

@@ -7,19 +7,19 @@
 <?php
 
 $user = new User();
-
 if (isset($_POST['submit'])) {
+    if ($user) {
+        $user->username = $_POST['username'];
+        $user->first_name = $_POST['first_name'];
+        $user->last_name = $_POST['last_name'];
+        $user->password = $_POST['password'];
+        $user->title = $_POST['title'];
+        $user->email = $_POST['email'];
+        $user->about = $_POST['about'];
 
-    $user->username = $_POST['username'];
-    $user->first_name = $_POST['first_name'];
-    $user->last_name = $_POST['last_name'];
-    $user->password = $_POST['password'];
-    $user->title = $_POST['title'];
-    $user->email = $_POST['email'];
-    $user->set_file($_FILES['file']);
-    $user->about = $_POST['about'];
-
-    $user->save_user_and_image();
+        $user->set_file($_FILES['file']);
+        $user->save_user_and_image();
+    }
 }
 
 ?>
@@ -32,19 +32,19 @@ if (isset($_POST['submit'])) {
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title">Add User</h3>
-                            <form action="add_user.php" method="post" enctype="">
+                            <form action="add_user.php" method="post" enctype="multipart/form-data">
                                 <h4>Username</h4>
-                                <input type="text" name="username">
+                                <input type="text" name="username" class="form-control">
                                 <h4>First name</h4>
-                                <input type="text" name="first_name">
+                                <input type="text" name="first_name" class="form-control">
                                 <h4>Last name</h4>
-                                <input type="text" name="last_name">
+                                <input type="text" name="last_name" class="form-control">
                                 <h4>Password</h4>
-                                <input type="password" name="password">
+                                <input type="password" name="password" class="form-control">
                                 <h4>Title</h4>
-                                <input type="text" name="title">
+                                <input type="text" name="title" class="form-control">
                                 <h4>E-mail</h4>
-                                <input type="email" name="email">
+                                <input type="email" name="email" class="form-control">
                                 <h4>Image</h4>
                                 <div class="form-group">
                                     <label for="file">Upload image:</label>
@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <h4>About</h4>
                                 <textarea name="about" id="mytextarea" cols="30" rows="10"></textarea>
-                                <input type="submit" value="submit" name="submit" class="btn btn-primary">
+                                <input type="submit" name="submit" value="Add user" class="btn btn-primary">
                             </form>
                         </div>
 

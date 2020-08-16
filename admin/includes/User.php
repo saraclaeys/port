@@ -18,13 +18,14 @@ class User extends Db_object
     public $about;
     public $interests;
 
-    public $upload_directory = 'image' . DS . 'users';
+    public $upload_directory = 'images' . DS . 'users';
     public $image_placeholder = 'http://place-hold.it/600x600&text=image';
 
     public $type;
     public $size;
 
     public $tmp_path;
+
     public $errors = array();
     public $upload_errors_array = array(
         UPLOAD_ERR_OK => "There is no error",
@@ -108,7 +109,6 @@ class User extends Db_object
                 return false;
             }
         }
-
     }
 
 }

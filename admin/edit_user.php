@@ -1,14 +1,10 @@
 <?php include('includes/header.php'); ?>
 
-<?php include('includes/sidebar.php'); ?>
-
 <?php include('includes/content-top.php'); ?>
 
-<?php
-/*if (!$session->is_signed_in()) {
-    redirect('login.php');
-}*/
+<?php include('includes/sidebar.php'); ?>
 
+<?php
 if (empty($_GET['id'])) {
     redirect('users.php');
 }
@@ -23,11 +19,11 @@ if (isset($_POST['submit'])) {
         $user->last_name = $_POST['last_name'];
         $user->title = $_POST['title'];
         $user->email = $_POST['email'];
+        $user->about = $_POST['about'];
         if (empty($_FILES['file'])) {
             $user->save();
         } else {
             $user->set_file($_FILES['file']);
-        $user->about = $_POST['about'];
             $user->save_user_and_image();
             // $user->save();
             redirect('edit_user.php?id={user->id}');
@@ -36,7 +32,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<div class="container-fluid">
+    <div class="container-fluid">
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12 grid-margin">
@@ -69,7 +65,8 @@ if (isset($_POST['submit'])) {
                             <h3>E-mail</h3>
                             <input type="email" name="email" value="<?php echo $user->email; ?>">
                             <h3>About</h3>
-                            <textarea name="about" id="mytextarea" cols="30" rows="10"><?php echo $user->about; ?></textarea>
+                            <textarea name="about" id="mytextarea" cols="30"
+                                      rows="10"><?php echo $user->about; ?></textarea>
                             <input type="submit" value="submit" name="submit" class="btn btn-primary">
                         </form>
                     </div>
@@ -78,4 +75,5 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+
 <?php include('includes/footer.php'); ?>

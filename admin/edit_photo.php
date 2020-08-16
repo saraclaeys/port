@@ -1,10 +1,10 @@
 <?php include('includes/header.php'); ?>
 
-<?php
-/*if (!$session->is_signed_in()) {
-    redirect('login.php');
-}*/
+<?php include('includes/sidebar.php'); ?>
 
+<?php include('includes/content-top.php'); ?>
+
+<?php
 if (empty($_GET['id'])) {
     redirect('photos.php');
 } else {
@@ -23,11 +23,9 @@ if (empty($_GET['id'])) {
         }
     }
 }
-
 ?>
 
-<?php include('includes/sidebar.php'); ?>
-<?php include('includes/content-top.php'); ?>
+
 
 <!-- hier komt het overzicht van alle foto's -->
 <div class="container-fluid">

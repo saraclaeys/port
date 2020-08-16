@@ -1,11 +1,10 @@
 <?php include('includes/header.php');?>
 
+<?php include('includes/sidebar.php'); ?>
+
+<?php include('includes/content-top.php'); ?>
+
 <?php
-
-/*if (!$session->is_signed_in()) {
-    redirect('login.php');
-}*/
-
 if (empty($_GET['id'])) {
     redirect('photos.php');
 }
@@ -18,11 +17,7 @@ if ($photo) {
 } else {
     redirect('photos.php');
 }
-
 ?>
-
-<?php include('includes/sidebar.php'); ?>
-<?php include('includes/content-top.php'); ?>
 
 <h1>Delete photo</h1>
 

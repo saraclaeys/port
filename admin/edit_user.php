@@ -49,9 +49,9 @@ if (isset($_POST['submit'])) {
                             <h3>Id</h3>
                             <p><?php echo $user->id; ?></p>
                             <h3>Image</h3>
-                            <?php $photo = Photo::find_by_id($user->user_image); ?>
+                            <?php $photo = Photo::find_by_id ($user->id); ?>
                             <img src="<?php echo $user->image_path_and_placeholder(); ?>" height="80" width="80">
-                            <p><?php echo $photo->name; ?></p>
+                            <p><?php echo $user->user_image; ?></p>
                             <h3>Username</h3>
                             <input type="text" name="username" value="<?php echo $user->username; ?>">
                             <h3>Password</h3>

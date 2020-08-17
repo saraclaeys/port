@@ -55,7 +55,7 @@ class User extends Db_object
 
     public function image_path_and_placeholder()
     {
-        return empty($this->images_id) ? $this->image_placeholder : $this->upload_directory . DS . $this->images_id;
+        return empty($this->user_image) ? $this->image_placeholder : $this->upload_directory . DS . $this->user_image;
     }
 
     public function set_file($file)

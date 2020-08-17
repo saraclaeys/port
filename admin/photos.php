@@ -33,7 +33,7 @@
                             <tbody>
                             <?php foreach ($photos as $photo): ?>
                                 <tr>
-                                    <td><img src="<?php echo $photo->picture_path(); ?>" height="80" width="80" alt=""</td>
+                                    <td><img src="<?php echo $photo->picture_path(); ?>" height="auto" width="100" alt=""</td>
                                     <td><?php echo $photo->id; ?></td>
                                     <td><?php echo $photo->title; ?></td>
                                     <td><?php echo $photo->caption; ?></td>

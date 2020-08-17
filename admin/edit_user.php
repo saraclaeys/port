@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
             $user->set_file($_FILES['file']);
             $user->save_user_and_image();
             // $user->save();
-            redirect('edit_user.php?id={user->id}');
+            redirect('edit_user.php?id={users->id}');
         }
     }
 }
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
                             <p><?php echo $user->id; ?></p>
                             <h3>Image</h3>
                             <?php $photo = Photo::find_by_id ($user->id); ?>
-                            <img src="<?php echo $user->image_path_and_placeholder(); ?>" height="80" width="80">
+                            <img src="<?php echo $user->image_path_and_placeholder(); ?>" height="auto" width="100px">
                             <p><?php echo $user->user_image; ?></p>
                             <h3>Username</h3>
                             <input type="text" name="username" value="<?php echo $user->username; ?>">

@@ -43,7 +43,7 @@
                                     foreach ($users as $user) {
                                         echo '<tr>';
                                         //$photo = Photo::find_by_id($user->user_image);
-                                        echo '<td><img src="images/users/' . $user->user_image . '" height="80" width="80"></td>';
+                                        echo '<td><img src="images/users/' . $user->user_image . '" height="auto" width="100px"></td>';
                                         echo '<td>' . $user->username . '</td>';
                                         echo '<td>' . $user->first_name . '</td>';
                                         echo '<td>' . $user->last_name . '</td>';

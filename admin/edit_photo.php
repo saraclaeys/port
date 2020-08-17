@@ -20,6 +20,7 @@ if (empty($_GET['id'])) {
             $photo->name = $_POST['name'];
 
             $photo->update();
+            redirect('photos.php');
         }
     }
 }
@@ -84,14 +85,14 @@ if (empty($_GET['id'])) {
                                                    value="<?php echo $photo->size ?>">
                                         </p>
                                     </div>
-                                    <div class="info-box-update float-right">
-                                        <input type="submit" value="Update" name="update"
-                                               class="btn btn-primary btn-lg">
-                                    </div>
                                     <div class="info-box-footer">
                                         <div class="info-box-delete float-left">
                                             <a href="delete_photo.php?id=<?php echo $photo->id; ?>"
                                                class="btn btn-danger btn-lg">Delete</a>
+                                        </div>
+                                        <div class="info-box-update float-right">
+                                            <input type="submit" value="Update" name="update"
+                                                   class="btn btn-primary btn-lg">
                                         </div>
                                     </div>
                                 </div>

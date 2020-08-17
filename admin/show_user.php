@@ -37,9 +37,9 @@ $user = User::find_by_id ($_GET['id']);
                         <p><?php echo $user->first_name; ?></p>
                         <h3>Last name</h3>
                         <p><?php echo $user->last_name; ?></p>
-                        <h3>Role</h3>
-                        <?php $role = Role::find_by_id ($user->role_id); ?>
-                        <p><?php echo $role->role; ?></p>
+<!--                        <h3>Role</h3>
+                        <?php /*$role = Role::find_by_id ($user->role_id); */?>
+                        <p><?php /*echo $role->role; */?></p>-->
                         <h3>Title</h3>
                         <p><?php echo $user->title; ?></p>
                         <h3>E-mail</h3>

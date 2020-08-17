@@ -1,5 +1,9 @@
-<?php include("includes/header.php"); ?>
+<?php include("includes/header.php");
 
+   /* if(!$session->is_signed_in ()){
+    redirect ('login.php');
+    }*/
+?>
 <?php include("includes/content-top.php"); ?>
 
 <?php include("includes/sidebar.php"); ?>
@@ -29,7 +33,7 @@
                                         <th>Username</th>
                                         <th>First Name</th>
                                         <th>Last Name</th>
-                                        <th>Role</th>
+                                      <!--  <th>Role</th>-->
                                         <th>Title</th>
                                         <th>Show user</th>
                                     </tr>
@@ -38,14 +42,14 @@
                                     <?php
                                     foreach ($users as $user) {
                                         echo '<tr>';
-                                        $photo = Photo::find_by_id($user->image_id);
-                                        echo '<td><img src="' . $user->image_path_and_placeholder() . '" height="80" width="80"></td>';
+                                        //$photo = Photo::find_by_id($user->user_image);
+                                        echo '<td><img src="images/users/' . $user->user_image . '" height="80" width="80"></td>';
                                         echo '<td>' . $user->username . '</td>';
                                         echo '<td>' . $user->first_name . '</td>';
                                         echo '<td>' . $user->last_name . '</td>';
 
-                                        $role = Role::find_by_id($user->role_id);
-                                        echo '<td>' . $role->role . '</td>';
+                                        /*$role = Role::find_by_id($user->role_id);
+                                        echo '<td>' . $role->role . '</td>';*/
                                         echo '<td>' . $user->title . '</td>';
                                         ?>
                                         <td><a href="show_user.php?id=<?php echo $user->id; ?>"

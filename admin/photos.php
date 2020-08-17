@@ -42,7 +42,7 @@
                                     <td><?php echo $photo->size; ?></td>
                                     <td><?php echo $photo->path; ?></td>
                                     <td><?php echo $photo->name; ?></td>
-                                    <td><a href="edit_photo.php?=id<?php echo $photo->id; ?>"
+                                    <td><a href="edit_photo.php?id=<?php echo $photo->id; ?>"
                                            class="btn btn-primary rounded-0"><i class="far fa-edit"></i></a></td>
                                     <td><a href="delete_photo.php?id=<?php echo $photo->id; ?>"
                                            class="btn btn-danger rounded-0"><i class="far fa-trash-alt"></i></a></td>

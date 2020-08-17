@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
                             <h3>Id</h3>
                             <p><?php echo $user->id; ?></p>
                             <h3>Image</h3>
-                            <?php $photo = Photo::find_by_id($user->image_id); ?>
+                            <?php $photo = Photo::find_by_id($user->user_image); ?>
                             <img src="<?php echo $user->image_path_and_placeholder(); ?>" height="80" width="80">
                             <p><?php echo $photo->name; ?></p>
                             <h3>Username</h3>

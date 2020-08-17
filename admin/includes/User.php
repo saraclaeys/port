@@ -4,16 +4,16 @@
 class User extends Db_object
 {
     protected static $db_table = "users";
-    protected static $db_table_fields = array('username', 'password', 'role_id', 'first_name', 'last_name', 'title', 'image_id', 'email', 'about', 'interests');
+    protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name', 'title', 'user_image', 'email', 'about', 'interests');
 
     public $id;
     public $username;
     public $password;
-    public $role_id;
+/*    public $role_id;*/
     public $first_name;
     public $last_name;
     public $title;
-    public $image_id;
+    public $user_image;
     public $email;
     public $about;
     public $interests;
@@ -68,7 +68,7 @@ class User extends Db_object
             return false;
         } else {
             // krijgt een uniek id doormiddel van datum en tijd
-            $this->image_id = date('m-d-Y_H-i-s') . basename($file['name']);
+            $this->user_image = date('m-d-Y_H-i-s') . basename($file['name']);
             $this->tmp_path = $file['tmp_name'];
             $this->type = $file['type'];
             $this->size = $file['size'];
@@ -77,8 +77,8 @@ class User extends Db_object
 
     public function save_user_and_image()
     {
-        $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->image_id;
-        if ($this->id) {
+        $target_path = SITE_ROOT . DS . "admin" . DS . $this->upload_directory . DS . $this->user_image;
+       if ($this->id) {
             move_uploaded_file($this->tmp_path, $target_path);
             $this->update();
             unset($this->tmp_path);
@@ -87,24 +87,24 @@ class User extends Db_object
             if (!empty($this->errors)) {
                 return false;
             }
-            if (empty($this->image_id) || empty($this->tmp_path)) {
+            if (empty($this->user_image) || empty($this->tmp_path)) {
                 $this->errors[] = "File not available";
                 return false;
             }
 
             if (file_exists($target_path)) {
-                $this->errors[] = "File {$this->image_id} exists";
+                $this->errors[] = "File {$this->user_image} exists";
                 return false;
             }
 
             if (move_uploaded_file($this->tmp_path, $target_path)) {
-                echo 'test';
+                //echo 'test';
                 if ($this->create()) {
                     unset($this->tmp_path);
                     return true;
                 }
             } else {
-                echo 'test';
+                //echo 'test';
                 $this->errors[] = "This folder has no write rights";
                 return false;
             }

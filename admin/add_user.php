@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
 
         $user->set_file($_FILES['file']);
         $user->save_user_and_image();
+        redirect('users.php');
     }
 }
 

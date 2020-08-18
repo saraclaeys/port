@@ -12,7 +12,7 @@
                 <div class="col-md-12 grid-margin">
                     <h2>Images</h2>
                 </div>
-                <div class="row">
+                <div class="main-container row">
                     <div class="col-md-12 grid-margin">
                         <table class="table table-header">
                             <thead>

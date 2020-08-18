@@ -453,10 +453,10 @@
   <section id="projects" class="projects">
     <h2>Projects</h2>
     <ul class="no-bullets">
-      <li><a href="https://saraclaeys.github.io/aotearoa/"><img src="images/aotearoa.png" alt="" /></a></li>
-      <li><a href="https://saraclaeys.github.io/todolist/"><img src="images/todolist.png" alt="" /></a></li>
-      <li><a href="https://saraclaeys.github.io/travotel/"><img src="images/travotel.png" alt="" /></a></li>
-      <li><a href="https://saraclaeys.github.io/2Dpong/"><img src="images/2dpong.png" alt="" /></a></li>
+      <li><a href="https://saraclaeys.github.io/aotearoa/" target="_blank"><img src="images/aotearoa.png" alt="" /></a></li>
+      <li><a href="https://saraclaeys.github.io/todolist/" target="_blank"><img src="images/todolist.png" alt="" /></a></li>
+      <li><a href="https://saraclaeys.github.io/travotel/" target="_blank"><img src="images/travotel.png" alt="" /></a></li>
+      <li><a href="https://saraclaeys.github.io/2Dpong/" target="_blank"><img src="images/2dpong.png" alt="" /></a></li>
     </ul>
     <form action="https://github.com/saraclaeys" method="get" target="_blank">
       <button type="submit">See more projects on GitHub</button>

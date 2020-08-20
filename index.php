@@ -269,7 +269,7 @@
       <ul class="no-bullets">
         <li>Goal Orientated</li>
         <li>Reliable</li>
-        <li>Social</li>
+        <li>Sociable</li>
         <li>Flexible</li>
         <li>Obliging</li>
         <li>No Nonsense</li>
